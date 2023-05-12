@@ -6,7 +6,7 @@ import "./App.css";
 // write text in user clipboard if copy is clicked
 async function getClipboardContents(e) {
   try {
-    await navigator.clipboard.writeText(e);
+    await navigator.clipboard.writeText(e.copyData);
     console.log("Pasted content: ");
   } catch (err) {
     console.error("Failed to read clipboard contents: ", err);
