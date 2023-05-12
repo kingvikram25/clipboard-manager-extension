@@ -7,10 +7,29 @@
     "default_popup": "index.html",
     "default_title": "PoP-up"
   },
-  "permissions": ["activeTab", "tabs", "clipboardRead", "clipboardWrite"],
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "clipboardRead",
+    "clipboardWrite",
+    "storage",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": ["inject-script.js"],
   "icons": {
-    "16": "logo192.png",
-    "48": "logo192.png",
-    "128": "logo192.png"
+    "16": "extn.png",
+    "48": "extn.png",
+    "128": "extn.png"
   }
 }
